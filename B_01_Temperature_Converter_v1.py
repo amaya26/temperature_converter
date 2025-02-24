@@ -4,7 +4,7 @@ import all_constants as c
 import conversion_rounding as cr
 
 
-class Converter:
+class Converter():
     """
     Temperature conversion tool (°C to °F or °F to °C)
     """
@@ -25,9 +25,9 @@ class Converter:
                                   )
         self.temp_heading.grid(row=0)
 
-        instructions = "Please enter a temperature below and then press " \
+        instructions = ("Please enter a temperature below and then press " \
                        "one of the buttons to convert it from centigrade to" \
-                       "fahrenheit."
+                       "fahrenheit.")
         self.temp_instructions = Label(self.temp_frame,
                                        text=instructions,
                                        wraplength=250, width=40,
@@ -35,8 +35,7 @@ class Converter:
         self.temp_instructions.grid(row=1)
 
         self.temp_entry = Entry(self.temp_frame,
-                                font=("Arial", "14")
-                                )
+                                font=("Arial", "14"))
         self.temp_entry.grid(row=2, padx=10, pady=10)
 
         error = "Please enter a number"
@@ -126,7 +125,7 @@ class Converter:
         self.to_history_button.config(state=NORMAL)
 
         self.answer_error.config(text=answer_statement)
-        self.all_calculations_list.append(answer)
+        self.all_calculations_list.append(answer_statement)
         print(self.all_calculations_list)
 
     def to_help(self):
